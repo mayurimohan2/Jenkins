@@ -1,8 +1,8 @@
 pipeline {
     agent any
     return {
-  statusCode: 200,
-  body: JSON.stringify({ message: "Hello World!" })
+    statusCode: 200,
+   body: JSON.stringify({ message: "Hello World!" })
 }
     stages {
         stage('Checkout project') {
