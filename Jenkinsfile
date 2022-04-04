@@ -25,9 +25,9 @@ pipeline {
         always {
             echo 'I will always say Hello again!'
             
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                 recipientProviders:[[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                  subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            emailext attachLog: true, body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+Check console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'mamo5332@colorado.edu'
             
         }
     }
