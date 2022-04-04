@@ -20,6 +20,15 @@ pipeline {
                 }
             }
         }
+        stage('Linting') { // Run pylint against your code
+      steps {
+        script {
+          sh """
+          pylint netman_netconf_obj2.py
+          """
+        }
+      }
+    }
     }
      post {
         always {
