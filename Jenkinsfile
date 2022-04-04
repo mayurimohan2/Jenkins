@@ -15,6 +15,9 @@ pipeline {
                 script {
                     sh 'pip install ipaddress'
                     sh 'pip install prettytable'
+                    sh 'pip install ncclient'
+                    sh 'pip install pandas'
+                    sh 'pip install netaddr'
                 }
             }
         }
