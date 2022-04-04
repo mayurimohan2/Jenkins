@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     git branch: "master",
-                        credentialsId: '0e07d668a4744d15afc6cb13da8623cf',
+                       credentialsId: '0e07d668a4744d15afc6cb13da8623cf',
                         url: 'https://github.com/mayurimohan2/Jenkins.git'
                 }
             }
