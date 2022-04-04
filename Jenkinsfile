@@ -18,6 +18,7 @@ pipeline {
                     sh 'pip install ncclient'
                     sh 'pip install pandas'
                     sh 'pip install netaddr'
+                    sh 'pip install re'
                 }
             }
         }
