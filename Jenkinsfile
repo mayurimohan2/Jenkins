@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'my_local_server'
-            customWorkspace '/projects/'
-        }
-    }
+    agent any
     stages {
         stage('Checkout project') {
             steps {
