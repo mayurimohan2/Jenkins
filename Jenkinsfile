@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                     sh 'pip install ipaddress'
+                    sh 'pip install prettytable'
                 }
             }
         }
