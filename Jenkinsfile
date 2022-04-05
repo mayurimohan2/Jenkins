@@ -18,7 +18,6 @@ pipeline {
                     sh 'pip install pandas'
                     sh 'pip install netaddr'
                     sh 'pip install --upgrade setuptools'
-                    sh 'pip install pylint'
                 }
             }
         }
