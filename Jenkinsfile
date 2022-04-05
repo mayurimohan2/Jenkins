@@ -17,8 +17,19 @@ pipeline {
                     sh 'pip install prettytable'
                     sh 'pip install pandas'
                     sh 'pip install netaddr'
-                    sh 'python -m pip install pylint'
+                    sh 'pip install --upgrade setuptools'
+                    sh 'pip install pylint'
                 }
+            }
+        }
+        stage('complie'){
+         steps {
+                //This sh step runs the Python command to compile your application and
+                //its calc library into byte code files, which are placed into the sources workspace directory
+                sh 'python -m py_compile sources/netman_netconf_obj2.py'
+                //This stash step saves the Python source code and compiled byte code files from the sources
+                //workspace directory for use in later stages.
+                stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
         stage('Linting') { // Run pylint against your code
