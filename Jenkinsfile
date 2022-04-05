@@ -17,7 +17,7 @@ pipeline {
                     sh 'pip install prettytable'
                     sh 'pip install pandas'
                     sh 'pip install netaddr'
-                    sh 'pip install pylint'
+                    sh 'python -m pip install pylint'
                 }
             }
         }
